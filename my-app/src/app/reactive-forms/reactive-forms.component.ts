@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-forms',
@@ -7,20 +7,19 @@ import { FormBuilder } from '@angular/forms';
   styleUrls: ['./reactive-forms.component.scss']
 })
 export class ReactiveFormsComponent implements OnInit {
-
-  constructor(private fb: FormBuilder) { }
+formEstudiante: FormGroup;
+  constructor( private fb:FormBuilder) { }
 
   ngOnInit(): void {
+   this.formEstudiante = this.fb.group({
+     nombre: ['', Validators.required, Validators.minLength(3)],
+     edad: ['', Validators.required],
+     curso: ['', Validators.required, Validators.maxLength(25)],
+   });
   }
-  formularioContacto = this.fb.group({
-    nombre: ['Mateo'],
-    email: [''],
-    mensaje: ['Este es mi mensaje de prueba']
-  });
-
-  submit() {
-    console.log(this.formularioContacto.value);
+  submit(){
+    console.log(this.formEstudiante.value);
   }
 
-
+ 
 }

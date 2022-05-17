@@ -1,0 +1,12 @@
+<form #formContacto="ngForm" (ngSubmit)="submit(formContacto.value)" class="m-3 clol-lg-6">
+  
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" [(ngModel)]="personaModel.nombre" #nombre="ngModel">
+        <label for="nombre">apellido</label>
+        <input type="text" id="nombre" name="apellido" [(ngModel)]="personaModel.apellido">
+        <label for="">edad</label>
+        <input type="text" id="edad" [(ngModel)]="personaModel.edad">
+
+        <button class="btn btn-primary" >Submit</button>
+
+</form>

@@ -1,7 +1,20 @@
-<form [formGroup]="formularioContacto" (ngSubmit)="submit()">
-    Nombre: <input type="text" formControlName="nombre" required>
-    Email: <input type="text" formControlName="email">
-    Mensaje: <textarea rows="10" cols="70" formControlName="mensaje"></textarea>
-  <button type="submit">Confirmar</button>
-</form>
-
+<div class="container d-flex align-items-center mt-5">
+  <form [formGroup]="formEstudiante" (ngSubmit)="submit()">
+  <div class="form-group">
+    <label>Nombre</label>
+  <input type="text" id="nombre" formControlName="nombre" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Edad</label>
+    <input type="text" id="edad" formControlName="edad" class="form-control">
+  
+  </div>
+  <div class="form-group">
+    <label>Curso</label>
+    <input type="text" id="curso" formControlName="curso" class="form-control">
+  </div>
+  
+  </form>
+<button type="submit" class="btn btn-primary">Submit</button>
+</div>
+    
