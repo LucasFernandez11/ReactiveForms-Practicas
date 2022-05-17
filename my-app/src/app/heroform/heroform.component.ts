@@ -1,4 +1,4 @@
-import { FormGroup } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../models/hero';
 @Component({
@@ -11,9 +11,15 @@ export class HeroformComponent implements OnInit {
   model = new Hero(18, 'Dr IQ', this.powers[0], 'Chuck Overstreet');
   submitted = false;
   heroForm:FormGroup;
-  constructor() { }
+  constructor(private fb:FormBuilder) { }
 
-  ngOnInit(){}
+  ngOnInit(){
+    this.heroForm=this.fb.group({
+      name:['',Validators.required],
+      alter
+
+    });
+  }
   onSubmit() { this.submitted = true; }
 
   newHero() {
